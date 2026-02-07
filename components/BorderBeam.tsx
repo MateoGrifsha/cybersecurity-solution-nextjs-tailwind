@@ -34,17 +34,17 @@ export const BorderBeam = ({
                     "--delay": delay,
                 } as React.CSSProperties
             }
-            className="pointer-events-none absolute inset-0 rounded-[inherit] [border:calc(var(--border-width)*1px)_solid_transparent] ![mask-clip:padding-box,border-box] ![mask-composite:intersect] [mask-image:linear-gradient(transparent,transparent),linear-gradient(white,white)]"
+            className="pointer-events-none absolute inset-0 rounded-[inherit] [border:calc(var(--border-width)*1px)_solid_transparent] [mask-clip:padding-box,border-box] [mask-composite:exclude] [-webkit-mask-composite:xor] [mask-image:linear-gradient(white,white),linear-gradient(white,white)]"
         >
             <motion.div
-                className="absolute aspect-square w-[calc(var(--size)*1px)] animate-border-beam [background:linear-gradient(to_left,var(--color-from),var(--color-to),transparent)] [offset-anchor:calc(var(--anchor)*1%)_50%] [offset-path:rect(0_auto_auto_0_round_calc(var(--size)*1px))]"
+                className="absolute aspect-square w-[calc(var(--size)*1px)] animate-border-beam [background:linear-gradient(to_left,var(--color-from),var(--color-to),transparent)] [offset-anchor:calc(var(--anchor)*1%)_50%] [offset-path:border-box]"
                 initial={{ offsetDistance: "0%" }}
                 animate={{ offsetDistance: "100%" }}
                 transition={{
-                    duration,
+                    duration: duration,
                     ease: "linear",
                     repeat: Infinity,
-                    delay,
+                    delay: delay,
                 }}
             />
         </div>

@@ -12,6 +12,29 @@
 
   --font-sans: "Inter", "Geist Sans", sans-serif;
   --font-tech: "JetBrains Mono", "Space Mono", monospace;
+
+  --animate-scanline: scanline 8s linear infinite;
+  --animate-border-beam: border-beam 15s linear infinite;
+
+  @keyframes scanline {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes border-beam {
+    0% {
+      offset-distance: 0%;
+    }
+
+    100% {
+      offset-distance: 100%;
+    }
+  }
 }
 
 :root {
@@ -20,27 +43,6 @@
   --accent: #210d33;
   --grid-color: rgba(255, 255, 255, 0.03);
 }
-
-@keyframes scanline {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  100% {
-    transform: translateY(100%);
-  }
-}
-
-@keyframes border-beam {
-  0% {
-    offset-distance: 0%;
-  }
-
-  100% {
-    offset-distance: 100%;
-  }
-}
-
 
 @layer base {
   body {
